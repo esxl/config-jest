@@ -1,6 +1,18 @@
-# @esxl/config-jest
+# `@esxl/config-jest`
 
 A shareable Jest [configuration](https://jestjs.io/docs/configuration) for all EcmaScript based projects.
+
+## Table of contents
+
+<details><summary> Click to expand table of contents</summary>
+
+- [`@esxl/config-jest`](#esxlconfig-jest)
+  - [Table of contents](#table-of-contents)
+  - [Install](#install)
+  - [Use](#use)
+    - [Use as a preset](#use-as-a-preset)
+    - [Use programmatically](#use-programmatically)
+    </details>
 
 ## Install
 
