@@ -1,0 +1,69 @@
+{
+  "bugs": {
+    "url": "https://github.com/esxl/config-jest/issues"
+  },
+  "dependencies": {
+    "@esxl/constants": "0.1.0",
+    "jest-watch-typeahead": "^1.1.0"
+  },
+  "description": "A shareable Jest configuration for all EcmaScript based projects",
+  "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-typescript": "^7.16.7",
+    "@jest/types": "^27.4.2",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-node-resolve": "^13.1.3",
+    "@types/jest": "^27.4.1",
+    "@types/node": "^16.11.26",
+    "@esxl/config-typescript": "0.3.0",
+    "husky": "^7.0.4",
+    "is-ci": "^3.0.1",
+    "jest": "^27.5.1",
+    "jest-circus": "^27.4.6",
+    "lint-staged": "^12.3.7",
+    "prettier": "2.6.2",
+    "rollup": "^2.70.1",
+    "tslib": "^2.3.1",
+    "typescript": "^4.6.3"
+  },
+  "engines": {
+    "node": ">=16.15.1 <=18.4.0",
+    "npm": ">=8.11.0 <9"
+  },
+  "exports": "./jest-preset.mjs",
+  "files": [
+    "dist",
+    "jest-preset.mjs"
+  ],
+  "homepage": "https://github.com/esxl/config-jest#readme",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "lint-staged": {
+    "*": "prettier --ignore-unknown --write"
+  },
+  "main": "./jest-preset.mjs",
+  "name": "@esxl/config-jest",
+  "peerDependencies": {
+    "jest": "^27.5.1",
+    "jest-circus": "^27.4.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/esxl/config-jest.git"
+  },
+  "scripts": {
+    "build": "rollup --config .rollup.config.ts --configPlugin '@rollup/plugin-babel={ babelHelpers: \"runtime\", exclude: /node_modules/, extensions: [\".ts\"] }'",
+    "format:check": "prettier --check --ignore-unknown .",
+    "format:fix": "prettier --ignore-unknown --write .",
+    "postversion": "git push origin --follow-tags",
+    "prepare": "is-ci || husky install",
+    "pre-commit": "lint-staged",
+    "preversion": "npm run format:check && npm run types && npm test && npm run build",
+    "test": "jest --passWithNoTests",
+    "types": "tsc --listEmittedFiles"
+  },
+  "type": "module",
+  "types": "./dist/types/index.d.ts",
+  "version": "0.0.0"
+}
