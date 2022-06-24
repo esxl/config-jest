@@ -18,7 +18,7 @@
     "@types/jest": "^27.4.1",
     "@types/node": "^16.11.26",
     "@esxl/config-typescript": "0.3.0",
-    "husky": "^7.0.4",
+    "husky": "^8.0.1",
     "is-ci": "^3.0.1",
     "jest": "^27.5.1",
     "jest-circus": "^27.4.6",
