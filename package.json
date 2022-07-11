@@ -4,7 +4,7 @@
   },
   "dependencies": {
     "@esxl/constants": "0.1.0",
-    "jest-watch-typeahead": "^1.1.0"
+    "jest-watch-typeahead": "^2.0.0"
   },
   "description": "A shareable Jest configuration for all EcmaScript based projects",
   "devDependencies": {
